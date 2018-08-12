@@ -15,12 +15,17 @@ Assumptions:
 
  # Tools to Use:
 
-•	  [Vagrant](http://vagrant.io/) - Using standardized OS images to test continuous build's will free up resources (developers and testers) - no need for dedicated environments. Vagrant image/build will include local software load balancer, database, inventory app, and API </li>
+•	  [Vagrant](http://vagrant.io/) - Using standardized OS images to test continuous build's will free up resources (developers and testers) - no need for dedicated environments. Vagrant image/build will include local software load balancer, database, inventory app, and API
+
 •	 [Docker](https://docs.docker.com/toolbox/toolbox_install_windows/)/[Kubernetes](https://kubernetes.io/) - Containerization will reduce vendor lock-in while allowing for on-prem hardware scaling and cloud resource. Leveraging application based caching solutioins (redis for example) while running in multiple regiions and local data centers, will ensure rapid response as well as the 99.99% uptime
+
 •	 Secure Cloud Services ([AWS](https://aws.amazon.com/)/[Azure](https://azure.microsoft.com/en-us/)/[GCP](https://cloud.google.com/)) - Containerized approach leveraging a cloud strategy will allow for relevant region specific resources expand and contract as needed while keeping the costs at a minimum
+
 •	 Cloud ready datastore - Leveraging key value index stores (example - [Cassandra](http://cassandra.apache.org/), [Redis](https://redis.io/), etc) will be leveraged for rapid updates with quick response times. 
+
 •	 BI functionality to be provided with [ODS Snowflake DB](https://www.snowflake.com/product/)
-•	 Consol - Manage both on-prem and cloud infrastructure - pushing continous builds with a minimum of impact
+
+•	 [Consul](http://www.consul.io) - Manage both on-prem and cloud infrastructure - pushing continous builds with a minimum of impact
 
 Proposed Workflow: The workflow I envision is a webapp running onsite at the warehouses as well as customer mobile devices. So the workflow would be - Mobile device webapp-->API-->Datastore. Running containerized API apps, you will be able to run in the cloud or on-prem without performance penalties
 
