@@ -105,19 +105,19 @@ lamp-stack         latest              e9ffedc8c286        4 minutes ago       2
 
 Run the newly built image:
 
-docker run -a stdin -a stdout -i -t lamp-stack /bin/bash
+```docker run -a stdin -a stdout -i -t lamp-stack /bin/bash```
 
 
 Open a browser and point to the server that is running Docker and hosting your container.
 If you are running Docker locally, point your browser to http://localhost:8080/.
 
-If you are using docker-machine on a Windows or Mac computer, find the IP address of the VirtualBox VM that is hosting Docker with the docker-machine ip command, substituting machine-name with the name of the docker machine you are using.
+If you are using docker-machine on a Windows or Mac computer, find the IP address of the VirtualBox VM that is hosting Docker with the docker-machine ip command, substituting machine-name with the name of the docker machine you are using as referenced below.
 
-docker-machine ip machine-name
+```docker-machine ip machine-name```
 Example - http://192.168.64.2:8080/
 You should see a web page.
 
-Stop the Docker container by typing: exit
+Stop the Docker container by typing: ```exit```
 
 (Optional) Push your image to Amazon Elastic Container Registry
 Amazon ECR is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. For Amazon ECR product details, featured customer case studies, and FAQs, see the Amazon Elastic Container Registry product detail pages.
