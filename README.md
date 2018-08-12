@@ -96,6 +96,7 @@ Build the Docker image from your Dockerfile.
 Run docker images to verify that the image was created correctly.
 
 ```docker images --filter reference=lamp-stack```
+
 Output:
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -120,15 +121,14 @@ Stop the Docker container by typing: exit
 (Optional) Push your image to Amazon Elastic Container Registry
 Amazon ECR is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. For Amazon ECR product details, featured customer case studies, and FAQs, see the Amazon Elastic Container Registry product detail pages.
 
-Note
-
-This section requires the AWS CLI. If you do not have the AWS CLI installed on your system, see Installing the AWS Command Line Interface in the AWS Command Line Interface User Guide.
-
-To tag your image and push it to Amazon ECR
-
-Create an Amazon ECR repository to store your lamp-stack image. Note the repositoryUri in the output.
+>Note:
+>
+>This section requires the AWS CLI. If you do not have the AWS CLI installed on your system, see Installing the AWS Command Line >Interface in the AWS Command Line Interface User Guide.
+>
+>To tag your image and push it to Amazon ECR, create an Amazon ECR repository to store your lamp-stack image. Note the repositoryUri in >the output.
 
 aws ecr create-repository --repository-name lamp-stack
+
 Output:
 
 {
@@ -145,9 +145,9 @@ Tag the lamp-stack image with the repositoryUri value from the previous step.
 docker tag lamp-stack aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack
 Run the aws ecr get-login --no-include-email command to get the docker login authentication command string for your registry.
 
-Note
-
-The get-login command is available in the AWS CLI starting with version 1.9.15; however, we recommend version 1.11.91 or later for recent versions of Docker (17.06 or later). You can check your AWS CLI version with the aws --version command. If you are using Docker version 17.06 or later, include the --no-include-email option after get-login. If you receive an Unknown options: --no-include-email error, install the latest version of the AWS CLI. For more information, see Installing the AWS Command Line Interface in the AWS Command Line Interface User Guide.
+>Note:
+>
+>The get-login command is available in the AWS CLI starting with version 1.9.15; however, we recommend version 1.11.91 or later for >recent versions of Docker (17.06 or later). You can check your AWS CLI version with the aws --version command. If you are using Docker >version 17.06 or later, include the --no-include-email option after get-login. If you receive an Unknown options: --no-include-email >error, install the latest version of the AWS CLI. For more information, see Installing the AWS Command Line Interface in the AWS >Command Line Interface User Guide.
 
 aws ecr get-login --no-include-email
 Run the docker login command that was returned in the previous step. This command provides an authorization token that is valid for 12 hours.
@@ -162,11 +162,11 @@ docker push aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack
 Next Steps
 After the image push is finished, you can use your image in your Amazon ECS task definitions, which you can use to run tasks with.
 
-Note
-
-This section requires the AWS CLI. If you do not have the AWS CLI installed on your system, see Installing the AWS Command Line Interface in the AWS Command Line Interface User Guide.
-
-To register a task definition with the lamp-stack image
+>Note:
+>
+>This section requires the AWS CLI. If you do not have the AWS CLI installed on your system, see Installing the AWS Command Line >Interface in the AWS Command Line Interface User Guide.
+>
+>To register a task definition with the lamp-stack image
 
 Create a file called lamp-stack-task-def.json with the following contents, substituting the repositoryUri from the previous section for the image field.
 
@@ -200,10 +200,10 @@ The task definition is registered in the lamp-stack family as defined in the JSO
 
 To run a task with the lamp-stack task definition
 
-Important
-
-Before you can run tasks in Amazon ECS, you need to launch container instances into a default cluster. For more information about how to set up and launch container instances, see Setting Up with Amazon ECS and Getting Started with Amazon ECS using Fargate.
-
+>Important
+>
+>Before you can run tasks in Amazon ECS, you need to launch container instances into a default cluster. For more information about how >to set up and launch container instances, see Setting Up with Amazon ECS and Getting Started with Amazon ECS using Fargate.
+>
 Use the following AWS CLI command to run a task with the lamp-stack task definition.
 
 aws ecs run-task --task-definition lamp-stack
