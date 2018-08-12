@@ -93,6 +93,7 @@ This Dockerfile uses the Ubuntu 16.04 image. The RUN instructions update the pac
 Build the Docker image from your Dockerfile.
 
 ```docker build -t lamp-stack .```
+
 Run docker images to verify that the image was created correctly.
 
 ```docker images --filter reference=lamp-stack```
