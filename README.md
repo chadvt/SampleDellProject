@@ -24,15 +24,16 @@ Anecdotal evidence from cashiers and customers claim inventory lookups are slow 
 # Proposed Workflow:
 The workflow I envision is a webapp running onsite at the warehouses as well as customer mobile devices. The workflow would be - Mobile device webapp-->API-->Datastore. Running containerized API apps, you will be able to run in the cloud or on-prem without performance penalties
 
-# Deployment 
-# Create a Docker Image
+# Deployment Methodology
 Amazon ECS task definitions use Docker images to launch containers on the container instances in your clusters. In this section, you create a Docker image of a simple web application, and test it on your local system or EC2 instance, and then push the image to a container registry (such as Amazon ECR or Docker Hub) so you can use it in an ECS task definition.
+
+# Deployment Steps
+Create a Docker Image
 
 Create a file called Dockerfile. A Dockerfile is a manifest that describes the base image to use for your Docker image and what you want installed and running on it. For more information about Dockerfiles, go to the Dockerfile Reference.
 
 ```touch Dockerfile```
 Edit the Dockerfile you just created and add the following content: 
-
 
 ---
 
@@ -85,7 +86,6 @@ RUN apt-get install mariadb-common mariadb-server mariadb-client -y
 
 EXPOSE 80
 EXPOSE 3306
-
 
 ---
 This Dockerfile uses the Ubuntu 16.04 image. The RUN instructions update the package caches, install some software packages for the web server. The EXPOSE instruction exposes port 80 on the container, and the CMD instruction starts the web server.
