@@ -9,9 +9,11 @@ Anecdotal evidence from cashiers and customers claim inventory lookups are slow 
 >The current strategy is to add more resources to the database cluster but I want to assure the business that we are ready to scale at a reasonable cost.
 
 # Assumptions:
->•	All warehouse stores have network connectivity to database resources, cloud, and local data centers
->•	The business will want to provide fault tolerance leveraging on-premise servers and cloud resources as backup
->•	Provide 99.99% uptime with <5 second response time for a reasonable cost
+•	All warehouse stores have network connectivity to database resources, cloud, and local data centers
+
+•	The business will want to provide fault tolerance leveraging on-premise servers and cloud resources as backup
+
+•	Provide 99.99% uptime with <5 second response time for a reasonable cost
 
  # Tools to Use:
 
