@@ -17,7 +17,7 @@ Anecdotal evidence from cashiers and customers claim inventory lookups are slow 
 
 •	 [Docker](https://docs.docker.com/toolbox/toolbox_install_windows/)/[Kubernetes](https://kubernetes.io/) - Containerization will reduce vendor lock-in while allowing for on-prem hardware scaling and cloud resource. Leveraging application based caching solutions (redis for example) while running in multiple regions and local data centers, will ensure rapid response as well as the 99.99% uptime
 
-•	 Secure Cloud Services ([AWS](https://aws.amazon.com/)/) - Containerized approach leveraging a cloud strategy will allow for relevant region specific resources expand and contract as needed while keeping the costs at a minimum. 
+•	 Secure Cloud Services ([AWS](https://aws.amazon.com/)) - Containerized approach leveraging a cloud strategy will allow for relevant region specific resources expand and contract as needed while keeping the costs at a minimum. 
 
 # Proposed Workflow:
 The workflow I envision is a webapp running onsite at the warehouses as well as customer mobile devices. The workflow would be - Mobile device webapp-->API-->Datastore. Running containerized API apps, you will be able to run in the cloud or on-prem without performance penalties
@@ -35,7 +35,7 @@ Edit the Dockerfile you just created and add the following content:
 ---
 
 FROM ubuntu:16.04
-MAINTAINER Peter Simkins <psimkins@gmail.com>
+MAINTAINER Chad Theriault <chadvt@comcast.net> 
 LABEL Description="Cutting-edge LAMP stack, based on Ubuntu 16.04 LTS. Includes .htaccess support and popular PHP7 features" \
 	License="Apache License 2.0" \
 	Version="1.0"
