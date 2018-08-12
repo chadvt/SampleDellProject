@@ -27,5 +27,5 @@ Proposed Workflow: The workflow I envision is a webapp running onsite at the war
 # Deployment 
 Cloud Approach: AWS S3 hosting static content and JS, with CloudFront CDN - Key to success is a highly reliable db with high throughput, all while conserving resources
 
-#Deployment Diagram
+# Deployment Diagram
 Please reference the [Proposed Workflow Diagram](https://github.com/chadvt/SampleDellProject/blob/master/WareCostCo.jpg) for a visual reference.
