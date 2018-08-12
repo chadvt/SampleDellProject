@@ -28,85 +28,18 @@ The workflow I envision is a webapp running onsite at the warehouses as well as 
 Amazon ECS task definitions use Docker images to launch containers on the container instances in your clusters. In this section, you create a Docker image of a simple web application, and test it on your local system or EC2 instance, and then push the image to a container registry (such as Amazon ECR or Docker Hub) so you can use it in an ECS task definition.
 
 # Deployment Steps
-Create a Docker Image
+Retrieve a Docker Image from a Git Deplository with the necessary function (a LAMP stack in this case)
+Leveraging the LAMP stack from https://hub.docker.com/u/fauria/
 
-Create a file called Dockerfile. A Dockerfile is a manifest that describes the base image to use for your Docker image and what you want installed and running on it. For more information about Dockerfiles, go to the Dockerfile Reference.
+```docker pull fauria/lamp```
 
-```touch Dockerfile```
-Edit the Dockerfile you just created and add the following content: 
+Create a container supporting our LAMP stack
 
----
+```docker run -i -t --rm fauria/lamp bash``` 
 
-FROM ubuntu:16.04
-MAINTAINER Chad Theriault <chadvt@comcast.net> 
-LABEL Description="Cutting-edge LAMP stack, based on Ubuntu 16.04 LTS. Includes .htaccess support and popular PHP7 features" \
-	License="Apache License 2.0" \
-	Version="1.0"
+Verify the Container has been created
 
-RUN apt-get update
-RUN apt-get upgrade -y
-
-RUN apt-get install -y zip unzip
-RUN apt-get install -y \
-	php7.0 \
-	php7.0-bz2 \
-	php7.0-cgi \
-	php7.0-cli \
-	php7.0-common \
-	php7.0-curl \
-	php7.0-dev \
-	php7.0-enchant \
-	php7.0-fpm \
-	php7.0-gd \
-	php7.0-gmp \
-	php7.0-imap \
-	php7.0-interbase \
-	php7.0-intl \
-	php7.0-json \
-	php7.0-ldap \
-	php7.0-mbstring \
-	php7.0-mcrypt \
-	php7.0-mysql \
-	php7.0-odbc \
-	php7.0-opcache \
-	php7.0-pgsql \
-	php7.0-phpdbg \
-	php7.0-pspell \
-	php7.0-readline \
-	php7.0-recode \
-	php7.0-snmp \
-	php7.0-sqlite3 \
-	php7.0-sybase \
-	php7.0-tidy \
-	php7.0-xmlrpc \
-	php7.0-xsl \
-	php7.0-zip
-RUN apt-get install apache2 libapache2-mod-php7.0 -y
-RUN apt-get install mariadb-common mariadb-server mariadb-client -y
-
-EXPOSE 80
-EXPOSE 3306
-
----
-This Dockerfile uses the Ubuntu 16.04 image. The RUN instructions update the package caches, install some software packages for the web server. The EXPOSE instruction exposes port 80 on the container, and the CMD instruction starts the web server.
-
-Build the Docker image from your Dockerfile.
-
-```docker build -t lamp-stack .```
-
-Run docker images to verify that the image was created correctly.
-
-```docker images --filter reference=lamp-stack```
-
-Output:
-
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-lamp-stack         latest              e9ffedc8c286        4 minutes ago       258MB
-
-Run the newly built image:
-
-```docker run -a stdin -a stdout -i -t lamp-stack /bin/bash```
-
+```docker ps```
 
 Open a browser and point to the server that is running Docker and hosting your container.
 If you are running Docker locally, point your browser to http://localhost:8080/.
