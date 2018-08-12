@@ -11,7 +11,7 @@ Anecdotal evidence from cashiers and customers claim inventory lookups are slow 
 # Assumptions:
 •	All warehouse stores have network connectivity to database resources, cloud, and local data centers
 •	The business will want to provide fault tolerance leveraging on-premise servers and cloud resources as backup
-•	 Provide 99.99% uptime with <5 second response time for a reasonable cost
+•	Provide 99.99% uptime with <5 second response time for a reasonable cost
 
  # Tools to Use:
 
