@@ -27,7 +27,7 @@ Assumptions:
 
 •	 [Consul](http://www.consul.io) - Manage both on-prem and cloud infrastructure - pushing continuous builds with a minimum of impact
 
-Proposed Workflow: The workflow I envision is a webapp running onsite at the warehouses as well as customer mobile devices. So the workflow would be - Mobile device webapp-->API-->Datastore. Running containerized API apps, you will be able to run in the cloud or on-prem without performance penalties
+Proposed Workflow: The workflow I envision is a webapp running onsite at the warehouses as well as customer mobile devices. The workflow would be - Mobile device webapp-->API-->Datastore. Running containerized API apps, you will be able to run in the cloud or on-prem without performance penalties
 
 # Deployment 
 Cloud Approach: AWS S3 hosting static content and JS, with CloudFront CDN - Key to success is a highly reliable db with high throughput, all while conserving resources
