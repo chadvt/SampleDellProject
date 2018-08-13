@@ -177,3 +177,9 @@ aws ecs run-task --task-definition dell-test
 # Deployment Diagram
 Please reference the [Proposed Workflow Diagram](https://github.com/chadvt/SampleDellProject/blob/master/WareCostCo.jpg) for a visual reference.
 ![alt text](https://github.com/chadvt/SampleDellProject/blob/master/WareCostCo.jpg)
+
+# Files in Git
+README.md <- This file which overviews the application
+dell-test-task-def.json  <- JSON file used in placing the project in AWS
+index.html  <- webpage rendered in the local docker container
+WareCostCo.jpg   <- Workflow diagram included as reference
