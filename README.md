@@ -28,7 +28,7 @@ The workflow I envision is a webapp running onsite at the warehouses as well as 
 Amazon ECS task definitions use Docker images to launch containers on the container instances in your clusters. In this section, you create a Docker image of a simple web application, and test it on your local system or EC2 instance, and then push the image to a container registry (such as Amazon ECR or Docker Hub) so you can use it in an ECS task definition.
 
 # Deployment Steps
-Retrieve a Docker Image from a Git Deplository with the necessary function: an Apache webserver that will pull from a (not included) SQL db).
+Retrieve a Docker Image from a Git Deplository with the necessary function: an Apache webserver that will pull from a (not included) SQL db.
 
 Create a Dockerfile to install our apache server and display output
 
