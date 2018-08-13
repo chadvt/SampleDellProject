@@ -38,9 +38,9 @@ Create a Dockerfile to install our apache server and display output
 ```RUN apt-get update -y```
 ```RUN apt-get install -y apache2```
 
-```# Install apache and write hello world message```
+```# Install apache and display sample webpage```
 
-```RUN echo "Hello World!" > /var/www/index.html```
+```COPY index.html/ /var/www/```
 
 ```# Configure apache```
 
