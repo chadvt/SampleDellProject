@@ -77,7 +77,7 @@ If you are running Docker locally, point your browser to http://localhost:8080/.
 If you are using docker-machine on a Windows or Mac computer, find the IP address of the VirtualBox VM that is hosting Docker with the docker-machine ip command, substituting machine-name with the name of the docker machine you are using as referenced below.
 
 ```docker-machine ip machine-name```
-Example - http://192.168.64.2:8080/
+Example - http://192.168.100.99/
 You should see a web page.
 
 Stop the Docker container by typing: ```exit```
