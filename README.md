@@ -43,10 +43,15 @@ Create a Dockerfile to install our apache server and display output
 ```RUN echo "Hello World!" > /var/www/index.html```
 
 ```# Configure apache```
+
 ```RUN a2enmod rewrite```
+
 ```RUN chown -R www-data:www-data /var/www```
+
 ```ENV APACHE_RUN_USER www-data```
+
 ```ENV APACHE_RUN_GROUP www-data```
+
 ```ENV APACHE_LOG_DIR /var/log/apache2```
 
 ```EXPOSE 80```
