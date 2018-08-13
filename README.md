@@ -28,19 +28,30 @@ The workflow I envision is a webapp running onsite at the warehouses as well as 
 Amazon ECS task definitions use Docker images to launch containers on the container instances in your clusters. In this section, you create a Docker image of a simple web application, and test it on your local system or EC2 instance, and then push the image to a container registry (such as Amazon ECR or Docker Hub) so you can use it in an ECS task definition.
 
 # Deployment Steps
-Retrieve a Docker Image from a Git Deplository with the necessary function (a LAMP stack in this case).
+Retrieve a Docker Image from a Git Deplository with the necessary function: an Apache webserver that will pull from a (not included) SQL db).
 
-Leveraging the LAMP stack from https://hub.docker.com/u/fauria/
+Create a Dockerfile to install our apache server and display output
 
-```docker pull fauria/lamp```
+```FROM ubuntu:12.04
 
-Create a container supporting our LAMP stack
+# Install dependencies
+RUN apt-get update -y
+RUN apt-get install -y apache2
 
-```docker run -i -t --rm fauria/lamp bash``` 
+# Install apache and write hello world message
+RUN echo "Hello Dell Team!" > /var/www/index.html
+
+Create a container supporting our apache server
+
+```docker build -t dell-test . ``` 
 
 Verify the Container has been created
 
-```docker ps```
+```docker images --filter reference=dell-test```
+
+Run the image just created
+
+```docker run -p 80:80 dell-test```
 
 Open a browser and point to the server that is running Docker and hosting your container.
 If you are running Docker locally, point your browser to http://localhost:8080/.
