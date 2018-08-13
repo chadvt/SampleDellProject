@@ -91,7 +91,7 @@ Amazon ECR is a managed AWS Docker registry service. Customers can use the famil
 >
 >To tag your image and push it to Amazon ECR, create an Amazon ECR repository to store your lamp-stack image. Note the repositoryUri in >the output.
 
-aws ecr create-repository --repository-name lamp-stack
+aws ecr create-repository --repository-name dell-test
 
 Output:
 
@@ -99,14 +99,14 @@ Output:
     "repository": {
         "registryId": "aws_account_id",
         "repositoryName": "lamp-stack",
-        "repositoryArn": "arn:aws:ecr:us-east-1:aws_account_id:repository/lamp-stack",
+        "repositoryArn": "arn:aws:ecr:us-east-1:aws_account_id:repository/dell-test",
         "createdAt": 1505337806.0,
-        "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack"
+        "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test"
     }
 }
-Tag the lamp-stack image with the repositoryUri value from the previous step.
+Tag the dell-test image with the repositoryUri value from the previous step.
 
-docker tag lamp-stack aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack
+docker tag dell-test aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test
 Run the aws ecr get-login --no-include-email command to get the docker login authentication command string for your registry.
 
 >Note:
@@ -122,7 +122,8 @@ Run the docker login command that was returned in the previous step. This comman
 
 Push the image to Amazon ECR with the repositoryUri value from the earlier step.
 
-docker push aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack
+docker push aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test
+
 Next Steps
 After the image push is finished, you can use your image in your Amazon ECS task definitions, which you can use to run tasks with.
 
@@ -130,16 +131,16 @@ After the image push is finished, you can use your image in your Amazon ECS task
 >
 >This section requires the AWS CLI. If you do not have the AWS CLI installed on your system, see Installing the AWS Command Line >Interface in the AWS Command Line Interface User Guide.
 >
->To register a task definition with the lamp-stack image
+>To register a task definition with the dell-test image
 
-Create a file called lamp-stack-task-def.json with the following contents, substituting the repositoryUri from the previous section for the image field.
+Create a file called dell-test-task-def.json with the following contents, substituting the repositoryUri from the previous section for the image field.
 
 {
-    "family": "lamp-stack",
+    "family": "dell-test",
     "containerDefinitions": [
         {
-            "name": "lamp-stack",
-            "image": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/lamp-stack",
+            "name": "dell-test",
+            "image": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test",
             "cpu": 10,
             "memory": 500,
             "portMappings": [
@@ -157,20 +158,20 @@ Create a file called lamp-stack-task-def.json with the following contents, subst
         }
     ]
 }
-Register a task definition with the lamp-stack-task-def.json file.
+Register a task definition with the dell-test-task-def.json file.
 
-aws ecs register-task-definition --cli-input-json file://lamp-stack-task-def.json
-The task definition is registered in the lamp-stack family as defined in the JSON file.
+aws ecs register-task-definition --cli-input-json file://dell-test-task-def.json
+The task definition is registered in the dell-test family as defined in the JSON file.
 
-To run a task with the lamp-stack task definition
+To run a task with the dell-test task definition
 
 >Important
 >
 >Before you can run tasks in Amazon ECS, you need to launch container instances into a default cluster. For more information about how >to set up and launch container instances, see Setting Up with Amazon ECS and Getting Started with Amazon ECS using Fargate.
 >
-Use the following AWS CLI command to run a task with the lamp-stack task definition.
+Use the following AWS CLI command to run a task with the dell-test task definition.
 
-aws ecs run-task --task-definition lamp-stack
+aws ecs run-task --task-definition dell-test
 
 
 # Deployment Diagram
