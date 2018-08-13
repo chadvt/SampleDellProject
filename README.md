@@ -180,6 +180,9 @@ Please reference the [Proposed Workflow Diagram](https://github.com/chadvt/Sampl
 
 # Files in Git
 README.md <- This file which overviews the application
+
 dell-test-task-def.json  <- JSON file used in placing the project in AWS
+
 index.html  <- webpage rendered in the local docker container
+
 WareCostCo.jpg   <- Workflow diagram included as reference
