@@ -3,8 +3,9 @@ Example of large inventory management solution for retail
 
 >Scenario Summary: I am a warehousing company. On the first and third Friday of every month, our sales spike due to members’ paydays. 
 > 
-> During these times, people checking our produce inventory within the stores (and online) goes up significantly so we want to make sure that we are able to accurately display inventory so we are not selling produce that we do not have enough of. 
-Anecdotal evidence from cashiers and customers claim inventory lookups are slow during busy peak times. 
+> During these times, traffic from people checking our produce inventory within the stores (and online) goes up significantly so we want to make sure that we are able to accurately display inventory so we are not selling produce that we do not have enough of. 
+>
+>Anecdotal evidence from cashiers and customers claim inventory lookups are slow during busy peak times. 
 >
 >The current strategy is to add more resources to the database cluster but I want to assure the business that we are ready to scale at a reasonable cost.
 
