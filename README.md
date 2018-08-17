@@ -116,9 +116,7 @@ Run the ```aws ecr get-login --no-include-email``` command to get the docker log
 >
 >The get-login command is available in the AWS CLI starting with version 1.9.15; however, we recommend version 1.11.91 or later for >recent versions of Docker (17.06 or later). You can check your AWS CLI version with the aws --version command. If you are using Docker >version 17.06 or later, include the --no-include-email option after get-login. If you receive an Unknown options: --no-include-email >error, install the latest version of the AWS CLI. For more information, see Installing the AWS Command Line Interface in the AWS >Command Line Interface User Guide.
 
-```aws ecr get-login --no-include-email```
-
-Run the docker login command that was returned in the previous step. This command provides an authorization token that is valid for 12 hours.
+Copy and paste the results from the previous (get-login) command in the previous step. This command provides an authorization token that is valid for 12 hours.
 
 >Important
 >
