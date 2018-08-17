@@ -7,7 +7,7 @@ Example of large inventory management solution for retail
 >
 >Anecdotal evidence from cashiers and customers claim inventory lookups are slow during busy peak times. 
 >
->The current strategy is to add more resources to the database cluster but I want to assure the business that we are ready to scale at a reasonable cost and inventory is available via browser for memebers and employees.
+>The current strategy is to add more resources to the database cluster but I want to assure the business that we are ready to scale at a reasonable cost and inventory is available via browser for members and employees.
 
 # Assumptions:
 •	All warehouse stores have network connectivity to database resources, cloud, and local data centers
