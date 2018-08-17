@@ -146,10 +146,10 @@ After the image push is finished, you can use your image in your Amazon ECS task
 
 Create a file called dell-test-task-def.json with the following contents, substituting the repositoryUri from the previous section for the image field.
 
-{
-    "family": "dell-test",
-    "containerDefinitions": [
-        {
+     {
+         "family": "dell-test",
+         "containerDefinitions": [
+           {
             "name": "dell-test",
             "image": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test",
             "cpu": 10,
@@ -168,7 +168,7 @@ Create a file called dell-test-task-def.json with the following contents, substi
             "essential": true
         }
     ]
-}
+     }
 Register a task definition with the dell-test-task-def.json file.
 
 ```aws ecs register-task-definition --cli-input-json file://dell-test-task-def.json```
