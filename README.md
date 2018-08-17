@@ -83,7 +83,8 @@ You should see a web page.
 
 Stop the Docker container by typing: ```exit```
 
-(Optional) Push your image to Amazon Elastic Container Registry
+(Optional) Push your image to Amazon Elastic Container Registry.
+
 Amazon ECR is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. For Amazon ECR product details, featured customer case studies, and FAQs, see the Amazon Elastic Container Registry product detail pages.
 
 >Note:
