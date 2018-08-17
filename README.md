@@ -97,23 +97,23 @@ Amazon ECR is a managed AWS Docker registry service. Customers can use the famil
 
 Output:
 
- {
- 
- "repository": {
- 
- "registryId": "aws_account_id",
- 
- "repositoryName": "lamp-stack",
- 
- "repositoryArn": "arn:aws:ecr:us-east-1:aws_account_id:repository/dell-test",
- 
- "createdAt": 1505337806.0,
- 
- "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test"
- 
-   }
- 
- }
+      {
+      
+      "repository": {
+      
+      "registryId": "aws_account_id",
+      
+      "repositoryName": "lamp-stack",
+      
+      "repositoryArn": "arn:aws:ecr:us-east-1:aws_account_id:repository/dell-test",
+      
+      "createdAt": 1505337806.0,
+      
+      "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test"
+      
+        }
+      
+      }
 
 Tag the dell-test image with the repositoryUri value from the previous step.
 
