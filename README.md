@@ -105,9 +105,11 @@ Output:
         "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test"
     }
 }
+
 Tag the dell-test image with the repositoryUri value from the previous step.
 
 docker tag dell-test aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test
+
 Run the aws ecr get-login --no-include-email command to get the docker login authentication command string for your registry.
 
 >Note:
