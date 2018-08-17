@@ -111,7 +111,7 @@ Output:
 
 "repositoryUri": "aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test"
 
-}
+      }
 
 }
 
