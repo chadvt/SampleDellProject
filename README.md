@@ -92,7 +92,7 @@ Amazon ECR is a managed AWS Docker registry service. Customers can use the famil
 >
 >To tag your image and push it to Amazon ECR, create an Amazon ECR repository to store your lamp-stack image. Note the repositoryUri in >the output.
 
-aws ecr create-repository --repository-name dell-test
+```aws ecr create-repository --repository-name dell-test```
 
 Output:
 
@@ -108,15 +108,16 @@ Output:
 
 Tag the dell-test image with the repositoryUri value from the previous step.
 
-docker tag dell-test aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test
+```docker tag dell-test aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test```
 
-Run the aws ecr get-login --no-include-email command to get the docker login authentication command string for your registry.
+Run the ```aws ecr get-login --no-include-email``` command to get the docker login authentication command string for your registry.
 
 >Note:
 >
 >The get-login command is available in the AWS CLI starting with version 1.9.15; however, we recommend version 1.11.91 or later for >recent versions of Docker (17.06 or later). You can check your AWS CLI version with the aws --version command. If you are using Docker >version 17.06 or later, include the --no-include-email option after get-login. If you receive an Unknown options: --no-include-email >error, install the latest version of the AWS CLI. For more information, see Installing the AWS Command Line Interface in the AWS >Command Line Interface User Guide.
 
-aws ecr get-login --no-include-email
+```aws ecr get-login --no-include-email```
+
 Run the docker login command that was returned in the previous step. This command provides an authorization token that is valid for 12 hours.
 
 >Important
@@ -125,7 +126,7 @@ Run the docker login command that was returned in the previous step. This comman
 
 Push the image to Amazon ECR with the repositoryUri value from the earlier step.
 
-docker push aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test
+```docker push aws_account_id.dkr.ecr.us-east-1.amazonaws.com/dell-test```
 
 Next Steps
 After the image push is finished, you can use your image in your Amazon ECS task definitions, which you can use to run tasks with.
@@ -163,7 +164,8 @@ Create a file called dell-test-task-def.json with the following contents, substi
 }
 Register a task definition with the dell-test-task-def.json file.
 
-aws ecs register-task-definition --cli-input-json file://dell-test-task-def.json
+```aws ecs register-task-definition --cli-input-json file://dell-test-task-def.json```
+
 The task definition is registered in the dell-test family as defined in the JSON file.
 
 To run a task with the dell-test task definition
@@ -174,7 +176,7 @@ To run a task with the dell-test task definition
 >
 Use the following AWS CLI command to run a task with the dell-test task definition.
 
-aws ecs run-task --task-definition dell-test
+```aws ecs run-task --task-definition dell-test```
 
 
 # Deployment Diagram
